@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/sfxdx-test-task/src",
+  "projects": {
+    "domain": {
+      "type": "library",
+      "root": "libs/domain",
+      "entryFile": "index",
+      "sourceRoot": "libs/domain/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/domain/tsconfig.lib.json"
+      }
+    },
+    "config": {
+      "type": "library",
+      "root": "libs/config",
+      "entryFile": "index",
+      "sourceRoot": "libs/config/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/config/tsconfig.lib.json"
+      }
+    },
+    "services": {
+      "type": "library",
+      "root": "libs/services",
+      "entryFile": "index",
+      "sourceRoot": "libs/services/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/services/tsconfig.lib.json"
+      }
+    },
+    "sfxdx-test-task": {
+      "type": "application",
+      "root": "apps/sfxdx-test-task",
+      "entryFile": "main",
+      "sourceRoot": "apps/sfxdx-test-task/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/sfxdx-test-task/tsconfig.app.json"
+      }
+    },
+    "web3": {
+      "type": "library",
+      "root": "libs/web3",
+      "entryFile": "index",
+      "sourceRoot": "libs/web3/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/web3/tsconfig.lib.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/sfxdx-test-task/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/sfxdx-test-task"
+}

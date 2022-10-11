@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": [
+    "sfxdx-test-task/node_modules", "test", "dist", "**/*spec.ts"]
+}
