@@ -3,7 +3,7 @@ import {
     Get,
     HttpException,
     HttpStatus,
-    Query,
+    Query, ValidationPipe,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { MoreThan, Repository } from 'typeorm';
@@ -54,14 +54,13 @@ export class OrderController {
         @Query('tokenA') tokenA: string,
         @Query('tokenB') tokenB: string,
         @Query('user') user: string,
-        @Query('active') active: boolean = false,
+        @Query('active') active: boolean = true,
     ): Promise<OrderDto[]> {
         return await this.orderRepository.find({
             where: {
                 tokenA,
                 tokenB,
                 user,
-                amountLeftToFill: active ? MoreThan(0) : 0,
                 isCancelled: !active,
             },
         });

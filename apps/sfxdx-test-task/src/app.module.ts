@@ -49,7 +49,7 @@ export class AppModule {
             CONFIG.WEB3.INFURA_HTTPS_ENDPOINT,
         );
         const w3: Web3 = new web3(provider);
-        const contract: Contract = new w3.eth.Contract(
+        const contract = new w3.eth.Contract(
             CONFIG.WEB3.ABI,
             CONFIG.WEB3.CONTRACT_ADDRESS,
         );
